@@ -1,5 +1,5 @@
 {
-  "name": "denopkg.com",
+  "name": "denopkg",
   "version": "1.0.0",
   "main": "index.js",
   "license": "MIT",
@@ -7,6 +7,7 @@
     "@types/node": "^10.12.18"
   },
   "dependencies": {
+    "marked": "^0.5.2",
     "node-fetch": "^2.3.0"
   }
 }
