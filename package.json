@@ -1,0 +1,12 @@
+{
+  "name": "denopkg.com",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "devDependencies": {
+    "@types/node": "^10.12.18"
+  },
+  "dependencies": {
+    "node-fetch": "^2.3.0"
+  }
+}

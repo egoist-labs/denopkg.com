@@ -1,0 +1,19 @@
+{
+  "alias": ["denopkg.now.sh", "denopkg.com"],
+  "builds": [
+    {
+      "src": "api/*.js",
+      "use": "@zeit/node"
+    }
+  ],
+  "routes": [
+    {
+      "src": "/",
+      "dest": "/api/index"
+    },
+    {
+      "src": "/.*",
+      "dest": "/api/github"
+    }
+  ]
+}
