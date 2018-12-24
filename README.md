@@ -27,5 +27,3 @@ import { opn } from 'https://denopkg.com/hashrock/deno-opn@master/opn.ts'
 
 opn('https://example.com')
 ```
-
-When you omit the filename, i.e. only username and repo name are specified, the filename defaults to `/main.ts`.
