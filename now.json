@@ -4,18 +4,23 @@
   "alias": ["denopkg.now.sh", "denopkg.com"],
   "builds": [
     {
-      "src": "api/*/index.js",
+      "src": "next.config.js",
+      "use": "@now/next"
+    },
+    {
+      "src": "github-redirect/index.js",
       "use": "@now/node"
-    }
+    },
+    { "src": "static/*", "use": "@now/static" }
   ],
   "routes": [
     {
-      "src": "/",
-      "dest": "/api/home"
+      "src": "/static/(.+)",
+      "dest": "/static/$1"
     },
     {
-      "src": "/.*",
-      "dest": "/api/github"
+      "src": "/([^/]+)/(.+)",
+      "dest": "/github-redirect?path=/$1/$2"
     }
   ]
 }

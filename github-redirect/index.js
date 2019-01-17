@@ -1,3 +1,5 @@
+const { parse } = require('url')
+
 const MATCHER = /^\/([^\/]+)\/([^\/@]+)(@)?(.*)/
 
 /**
@@ -5,11 +7,11 @@ const MATCHER = /^\/([^\/]+)\/([^\/@]+)(@)?(.*)/
  * @param {import('http').OutgoingMessage} res
  */
 module.exports = (req, res) => {
-  if (!MATCHER.test(req.url)) {
+  const { query } = parse(req.url, true)
+  if (!MATCHER.test(query.path)) {
     return invalidRequest(res)
   }
-
-  const [, owner, repo, versionSpecified, rest] = MATCHER.exec(req.url)
+  const [, owner, repo, versionSpecified, rest] = MATCHER.exec(query.path)
 
   if (!owner || !repo) {
     return invalidRequest(res)
