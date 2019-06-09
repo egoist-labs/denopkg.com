@@ -17,7 +17,7 @@ module.exports = (req, res) => {
 
   // TODO: should we use `cdn.jsdelivr.net/gh` instead?
   res.statusCode = 301
-  res.setHeader('Location', `https://raw.githubusercontent.com/${owner}/${repo}/${versionSpecified ? '' : 'master'}${rest || '/main.ts'}`)
+  res.setHeader('Location', `https://raw.githubusercontent.com/${owner}/${repo}/${versionSpecified ? '' : 'master'}${rest || '/mod.ts'}`)
   res.end()
 }
 
