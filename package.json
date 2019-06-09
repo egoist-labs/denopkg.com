@@ -7,7 +7,7 @@
     "@types/node": "^10.12.18"
   },
   "dependencies": {
-    "marked": "^0.5.2",
+    "marked": "^0.6.1",
     "node-fetch": "^2.3.0"
   }
 }
