@@ -27,3 +27,7 @@ import { opn } from 'https://denopkg.com/hashrock/deno-opn@master/opn.ts'
 
 opn('https://example.com')
 ```
+
+## Entry file
+
+URLs omitting file path like `https://denopkg.com/hashrock/deno-opn` will be redirected to `mod.ts` on master branch.
