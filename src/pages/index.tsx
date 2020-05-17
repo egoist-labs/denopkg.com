@@ -71,7 +71,7 @@ export default () => {
         </div>
         <div className="my-5 text-xl">Example:</div>
         <div className="my-5">
-          <pre className="bg-black rounded-lg text-gray-200">
+          <pre className="bg-black rounded-lg text-gray-200 overflow-auto">
             <code>{`
   import { opn } from 'https://denopkg.com/hashrock/deno-opn/opn.ts'
 
