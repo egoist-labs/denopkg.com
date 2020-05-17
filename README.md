@@ -1,6 +1,6 @@
 <!-- markdownlint-disable MD041 -->
 
-![denopkg](./denopkg.png)
+![denopkg](https://raw.githubusercontent.com/denopkg/denopkg.com/master/denopkg.png)
 
 # [denopkg.com](https://denopkg.com)
 
