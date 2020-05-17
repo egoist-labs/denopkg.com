@@ -9,6 +9,9 @@ const invalidURL = (res: NextApiResponse) => {
 
 const handler: NextApiHandler = async (req, res) => {
   const slug = Array.isArray(req.query.slug) ? req.query.slug : [req.query.slug]
+
+  console.log('slug', slug)
+
   const m = MATCHER.exec(slug.join('/'))
 
   if (!m) {

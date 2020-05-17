@@ -3,8 +3,8 @@
   "scope": "denopkg",
   "rewrites": [
     {
-      "source": "/(.+)",
-      "destination": "/api/github/$1"
+      "source": "/([^/]+)/(.+)",
+      "destination": "/api/github/$1/$2"
     }
   ]
 }
