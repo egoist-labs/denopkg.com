@@ -4,7 +4,7 @@
   "rewrites": [
     {
       "source": "/([^/]+)/(.+)",
-      "destination": "/api/github/$1/$2"
+      "destination": "/api/github?slug=$1/$2"
     }
   ]
 }
