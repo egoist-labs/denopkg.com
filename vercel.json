@@ -1,0 +1,12 @@
+{
+  "routes": [
+    {
+      "src": "/",
+      "dest": "/api/home"
+    },
+    {
+      "src": "/.*",
+      "dest": "/api/github"
+    }
+  ]
+}

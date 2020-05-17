@@ -1,13 +1,13 @@
 {
   "name": "denopkg",
+  "description": "An easier way to use code from GitHub in your Deno project",
   "version": "1.0.0",
-  "main": "index.js",
-  "license": "MIT",
-  "devDependencies": {
-    "@types/node": "^10.12.18"
-  },
+  "repository": "git@github.com:denopkg/denopkg.com.git",
+  "homepage": "https://denopkg.com",
+  "bugs": "https://github.com/denopkg/denopkg.com/issues",
   "dependencies": {
     "marked": "^0.6.1",
     "node-fetch": "^2.3.0"
-  }
+  },
+  "license": "MIT"
 }

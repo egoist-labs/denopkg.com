@@ -28,7 +28,7 @@ module.exports = async (req, res) => {
     <div class="main">
     ${marked(text)}
     <hr>
-    This project is open-sourced on <a href="https://github.com/denopkg/denopkg.com">GitHub</a> and hosted by <a href="https://zeit.co">Now</a>.
+    This project is open-sourced on <a href="https://github.com/denopkg/denopkg.com">GitHub</a> and hosted by <a href="https://vercel.com">Vercel</a>.
     </div>
   </body>
   `)
