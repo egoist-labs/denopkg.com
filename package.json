@@ -1,4 +1,11 @@
 {
+  "private": true,
+  "name": "denopkg",
+  "scripts": {
+    "dev": "next",
+    "build": "next build",
+    "start": "next start"
+  },
   "dependencies": {
     "next": "^9.4.1",
     "react": "^16.13.1",

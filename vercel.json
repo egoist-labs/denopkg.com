@@ -1,8 +1,10 @@
 {
-  "routes": [
+  "version": 2,
+  "scope": "denopkg",
+  "rewrites": [
     {
-      "src": "/(.+)",
-      "dest": "/api/github/$1"
+      "source": "/(.+)",
+      "destination": "/api/github/$1"
     }
   ]
 }
