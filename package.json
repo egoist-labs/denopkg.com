@@ -4,7 +4,9 @@
   "main": "index.js",
   "license": "MIT",
   "devDependencies": {
-    "@types/node": "^10.12.18"
+    "@types/marked": "^0.7.4",
+    "@types/node-fetch": "^2.5.7",
+    "@vercel/node": "^1.6.1"
   },
   "dependencies": {
     "marked": "^0.6.1",

@@ -1,14 +1,14 @@
-const fetch = require('node-fetch')
-const marked = require('marked')
+import { NowRequest, NowResponse } from '@vercel/node'
+import marked from 'marked'
+import fetch from 'node-fetch'
 
-let text
+let text: string
 
-module.exports = async (req, res) => {
-  text =
-    text ||
-    (await fetch(
-      `http://denopkg.com/denopkg/denopkg.com/README.md`
-    ).then(res => res.text()))
+export default async (_: NowRequest, res: NowResponse) => {
+  if (!text) {
+    text = await fetch('http://denopkg.com/denopkg/denopkg.com/README.md').then((res) => res.text())
+  }
+
   res.setHeader('content-type', 'text/html')
   res.end(`
   <head>
