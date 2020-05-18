@@ -22,7 +22,7 @@ const handler: NextApiHandler = async (req, res) => {
   res.status(301)
   res.setHeader(
     'Location',
-    `https://cdn.jsdelivr.net/gh/${owner}/${repo}@${
+    `https://raw.githubusercontent.com/${owner}/${repo}/${
       versionSpecified ? '' : 'master'
     }${rest || '/mod.ts'}`
   )
