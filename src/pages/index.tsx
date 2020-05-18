@@ -75,7 +75,7 @@ export default () => {
             <code>{`
   import { opn } from 'https://denopkg.com/hashrock/deno-opn/opn.ts'
 
-  open('https://denopkg.com')
+  opn('https://denopkg.com')
   `}</code>
           </pre>
         </div>
