@@ -9,7 +9,7 @@ You wanna use a third-party library which is stored on GitHub in [Deno](https://
 Instead of writing:
 
 ```typescript
-import { opn } from 'https://raw.githubusercontent.com/hashrock/deno-opn/master/opn.ts'
+import { opn } from 'https://raw.github.com/hashrock/deno-opn/master/opn.ts'
 
 opn('https://example.com')
 ```
