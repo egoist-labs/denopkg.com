@@ -1,5 +1,5 @@
 import * as React from 'react'
-import Head from 'next/head'
+import Seo from '../components/seo'
 
 const Span: React.FC<{ bg: string; leading?: boolean }> = ({
   children,
@@ -22,9 +22,7 @@ const Span: React.FC<{ bg: string; leading?: boolean }> = ({
 export default () => {
   return (
     <div>
-      <Head>
-        <title>Deno PKG</title>
-      </Head>
+      <Seo />
       <header className="border-b border-gray-200 py-3">
         <div className="container px-2 max-w-2xl mx-auto flex items-center justify-between">
           <h1 className="text-3xl flex items-center">
