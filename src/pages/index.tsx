@@ -26,7 +26,7 @@ export default () => {
       <header className="border-b border-gray-200 py-3">
         <div className="container px-2 max-w-2xl mx-auto flex items-center justify-between">
           <h1 className="text-3xl flex items-center">
-            <img className="w-12 h-12" src="/denopkg.png" /> Deno PKG
+            <img className="w-12 h-12" src="/denopkg.png" alt="Deno PKG Logo" /> Deno PKG
           </h1>
           <div>
             <a
