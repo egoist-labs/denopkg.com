@@ -1,10 +1,9 @@
 {
   "version": 2,
-  "scope": "denopkg",
-  "rewrites": [
-    {
-      "source": "/([^/]+)/(.+)",
-      "destination": "/api/github?slug=$1/$2"
-    }
+  "redirects": [
+    { "source": "/((?!_next)[^\\/]+)/([^\\@]+)@([^\\/]+)", "destination": "https://raw.githubusercontent.com/$1/$2/$3/mod.ts" },
+    { "source": "/((?!_next)[^\\/]+)/([^\\@]+)@([^\\/]+)/(.*)", "destination": "https://raw.githubusercontent.com/$1/$2/$3/$4" },
+    { "source": "/((?!_next)[^\\/]+)/([^\\/]+)", "destination": "https://raw.githubusercontent.com/$1/$2/master/mod.ts" },
+    { "source": "/((?!_next)[^\\/]+)/([^\\/]+)/(.*)", "destination": "https://raw.githubusercontent.com/$1/$2/master/$3" }
   ]
 }
