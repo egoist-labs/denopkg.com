@@ -22,6 +22,12 @@ export default async (req: NextRequest) => {
 
   const res = await fetch(url)
 
+  if (!res.ok) {
+    return new Response(res.statusText, {
+      status: res.status,
+    })
+  }
+
   const response = new Response(new Uint8Array(await res.arrayBuffer()), {
     headers: {
       'content-type': res.headers.get('content-type') || 'text/plain',
