@@ -1,10 +1,4 @@
 {
   "version": 2,
-  "scope": "denopkg",
-  "rewrites": [
-    {
-      "source": "/([^/]+)/(.+)",
-      "destination": "/api/github?slug=$1/$2"
-    }
-  ]
+  "scope": "denopkg"
 }
