@@ -21,5 +21,12 @@ export default async (req: NextRequest) => {
   }${rest || '/mod.ts'}`
 
   const res = await fetch(url)
-  return res
+
+  const response = new Response(new Uint8Array(await res.arrayBuffer()), {
+    headers: {
+      'content-type': res.headers.get('content-type') || 'text/plain',
+    },
+  })
+
+  return response
 }
