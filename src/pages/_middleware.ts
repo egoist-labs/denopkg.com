@@ -16,10 +16,15 @@ export default async (req: NextRequest) => {
     return NextResponse.next()
   }
 
+  if (!versionSpecified) {
+    return NextResponse.redirect(`/${owner}/${repo}@master${rest}`)
+  }
+
   const url = `https://raw.githubusercontent.com/${owner}/${repo}/${
     versionSpecified ? '' : 'master'
   }${rest || '/mod.ts'}`
 
+  console.log(`fetching`, url)
   const res = await fetch(url)
 
   if (!res.ok) {
