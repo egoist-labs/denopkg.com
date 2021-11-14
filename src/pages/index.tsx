@@ -23,12 +23,12 @@ export default () => {
   return (
     <div>
       <Head>
-        <title>Deno PKG</title>
+        <title>DenoPKG</title>
       </Head>
       <header className="border-b border-gray-200 py-3">
         <div className="container px-2 max-w-2xl mx-auto flex items-center justify-between">
-          <h1 className="text-3xl flex items-center">
-            <img className="w-12 h-12" src="/denopkg.png" /> Deno PKG
+          <h1 className="text-2xl flex items-center font-bold">
+            <img className="w-12 h-12 -ml-2" src="/denopkg.png" /> DenoPKG
           </h1>
           <div>
             <a
@@ -56,10 +56,7 @@ export default () => {
       <div className="container px-2 max-w-2xl mx-auto">
         <div className="my-5 text-xl">
           To use GitHub as a package registry for Deno, you only need to replace{' '}
-          <code className="text-sm bg-gray-200 rounded p-1">github.com</code>{' '}
-          with{' '}
-          <code className="text-sm bg-gray-200 rounded p-1">denopkg.com</code>{' '}
-          like this:
+          <code>github.com</code> with <code>denopkg.com</code> like this:
         </div>
         <div className="my-5 text-gray-400">
           <Span leading bg="bg-green-500">
@@ -79,10 +76,36 @@ export default () => {
   `}</code>
           </pre>
         </div>
+        <div className="my-5">
+          When a git tag is not specified, it will use the <code>master</code>{' '}
+          branch, to use the latest release of your repo, try{' '}
+          <code>@latest</code> intead. However, it's always better to specify a
+          git tag explicitly.
+        </div>
+        <a
+          target="_blank"
+          rel="noopener nofollow"
+          href="https://github.com/sponsors/egoist"
+          className="border-2 border-pink-400 text-pink-500 font-bold flex items-center justify-center p-5 rounded-lg text-xl space-x-2 hover:bg-pink-50"
+        >
+          <img src="/github-sponsors-logo.svg" className="w-1- h-10" />
+          <span>Sponsor this project on GitHub.</span>
+        </a>
       </div>
       <footer className="border-t border-gray-200 my-10 py-5 text-gray-500">
-        <div className="container px-2 max-w-2xl mx-auto">
-        &copy; 2020 Deno PKG.
+        <div className="container px-2 max-w-2xl mx-auto flex justify-between">
+          <span>&copy; 2020 Deno PKG.</span>
+          <span>
+            By{' '}
+            <a
+              className="text-blue-500 hover:underline"
+              target="_blank"
+              rel="noopener nofollow"
+              href="https://github.com/sponsors/egoist"
+            >
+              @EGOIST
+            </a>
+          </span>
         </div>
       </footer>
     </div>

@@ -4,3 +4,4 @@ node_modules
 .now
 .vercel
 .next
+.env

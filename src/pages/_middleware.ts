@@ -1,6 +1,6 @@
 import { NextRequest, NextResponse } from 'next/server'
 
-const MATCHER = /^\/([^\/]+)\/([^\/@]+)(@)?(.*)/
+const MATCHER = /^\/([^\/]+)\/([^\/@]+)(?:@([^\/]+))?(.*)/
 
 export default async (req: NextRequest) => {
   const slug = req.nextUrl.pathname
@@ -11,18 +11,28 @@ export default async (req: NextRequest) => {
     return NextResponse.next()
   }
 
-  const [, owner, repo, versionSpecified, rest] = m
+  const [, owner, repo, version, rest] = m
   if (!owner || !repo) {
     return NextResponse.next()
   }
 
-  if (!versionSpecified) {
+  if (!version) {
     return NextResponse.redirect(`/${owner}/${repo}@master${rest}`)
   }
 
-  const url = `https://raw.githubusercontent.com/${owner}/${repo}/${
-    versionSpecified ? '' : 'master'
-  }${rest || '/mod.ts'}`
+  if (version === 'latest') {
+    const { tag, error } = await getLatestTag(owner, repo)
+    if (error) {
+      return new Response(error, {
+        status: 500,
+      })
+    }
+    return NextResponse.redirect(`/${owner}/${repo}@${tag}${rest}`)
+  }
+
+  const url = `https://raw.githubusercontent.com/${owner}/${repo}/${version}${
+    rest || '/mod.ts'
+  }`
 
   console.log(`fetching`, url)
   const res = await fetch(url)
@@ -40,4 +50,35 @@ export default async (req: NextRequest) => {
   })
 
   return response
+}
+
+async function getLatestTag(owner: string, name: string) {
+  const res = await fetch(`https://api.github.com/graphql`, {
+    headers: {
+      authorization: `Bearer ${process.env.GITHUB_TOKEN}`,
+    },
+    method: 'POST',
+    body: JSON.stringify({
+      query: `query($name: String!,$owner: String!) { 
+        repository(name:$name,owner:$owner) {
+          latestRelease {
+            tag {
+              name
+            }
+          }
+        }
+      }`,
+      variables: {
+        name,
+        owner,
+      },
+    }),
+  })
+
+  const { data, errors } = await res.json()
+
+  return {
+    tag: data && data.repository.latestRelease.tag.name,
+    error: errors && errors[0].message,
+  }
 }
