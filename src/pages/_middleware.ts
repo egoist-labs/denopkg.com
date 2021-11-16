@@ -4,6 +4,7 @@ const MATCHER = /^\/([^\/]+)\/([^\/@]+)(?:@([^\/]+))?(.*)/
 
 export default async (req: NextRequest) => {
   const slug = req.nextUrl.pathname
+  const dts = req.nextUrl.searchParams.get('dts')
 
   const m = MATCHER.exec(slug)
 
@@ -43,10 +44,19 @@ export default async (req: NextRequest) => {
     })
   }
 
+  const headers: Record<string, string> = {
+    'content-type': res.headers.get('content-type') || 'text/plain',
+  }
+
+  if (typeof dts === 'string') {
+    headers['x-typescript-types'] = new URL(res.url).pathname.replace(
+      /\.(cjs|mjs|js)$/,
+      '.d.ts'
+    )
+  }
+
   const response = new Response(new Uint8Array(await res.arrayBuffer()), {
-    headers: {
-      'content-type': res.headers.get('content-type') || 'text/plain',
-    },
+    headers,
   })
 
   return response

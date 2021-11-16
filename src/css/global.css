@@ -1,3 +1,7 @@
 :not(pre) > code {
   @apply text-sm bg-gray-200 rounded p-1;
 }
+
+.link {
+  @apply text-blue-500 hover:underline;
+}

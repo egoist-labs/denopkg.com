@@ -82,6 +82,23 @@ export default () => {
           <code>@latest</code> intead. However, it's always better to specify a
           git tag explicitly.
         </div>
+        <div className="my-5">
+          <h3 className="text-xl font-bold mb-3">Importing JavaScript</h3>
+          <p className="my-5">
+            If you're importing <code>mod.js</code> and you want to use{' '}
+            <code>mod.d.ts</code> as the types, you can use the{' '}
+            <code>?dts</code> parameter to set the{' '}
+            <a
+              href="https://deno.land/manual@v1.16.1/typescript/types#using-x-typescript-types-header"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="link"
+            >
+              x-typescript-types
+            </a>{' '}
+            header.
+          </p>
+        </div>
         <a
           target="_blank"
           rel="noopener nofollow"
