@@ -111,7 +111,7 @@ export default () => {
       </div>
       <footer className="border-t border-gray-200 my-10 py-5 text-gray-500">
         <div className="container px-2 max-w-2xl mx-auto flex justify-between">
-          <span>&copy; 2020 Deno PKG.</span>
+          <span>&copy; 2020-2022 Deno PKG.</span>
           <span>
             By{' '}
             <a
