@@ -25,6 +25,11 @@ export async function handler(
   const slug = parsedUrl.pathname
   const dts = parsedUrl.searchParams.get("dts")
 
+  // skip fresh internal path
+  if (slug.startsWith("/_frsh/")) {
+    return ctx.next()
+  }
+
   const m = MATCHER.exec(slug)
 
   if (!m) {
