@@ -1,6 +1,6 @@
 <!-- markdownlint-disable MD041 -->
 
-![denopkg](./public/denopkg.png)
+![denopkg](./static/denopkg.png)
 
 # DenoPkg
 
