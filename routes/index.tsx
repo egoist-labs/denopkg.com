@@ -1,6 +1,7 @@
 /** @jsx h */
 import { h, FunctionComponent } from "preact"
 import { tw } from "@twind"
+import { Head } from "$fresh/runtime.ts"
 
 const Span: FunctionComponent<{ bg: string; leading?: boolean }> = ({
   children,
@@ -23,6 +24,9 @@ const Span: FunctionComponent<{ bg: string; leading?: boolean }> = ({
 export default function Home() {
   return (
     <div>
+      <Head>
+        <title>DenoPKG</title>
+      </Head>
       <header class={tw`border-b border-gray-200 py-3`}>
         <div
           class={tw`max-w-2xl px-2 mx-auto flex items-center justify-between`}
