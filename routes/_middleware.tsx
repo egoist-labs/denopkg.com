@@ -70,6 +70,7 @@ export async function handler(
 
   const headers: Record<string, string> = {
     "content-type": res.headers.get("content-type") || "text/plain",
+    "Access-Control-Allow-Origin": "*"
   }
 
   if (typeof dts === "string") {
