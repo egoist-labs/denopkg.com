@@ -1,6 +1,5 @@
 /** @jsx h */
 import { h, FunctionComponent } from "preact"
-import { useEffect } from "preact/hooks"
 import { tw } from "@twind"
 import { Head } from "$fresh/runtime.ts"
 
@@ -23,15 +22,6 @@ const Span: FunctionComponent<{ bg: string; leading?: boolean }> = ({
 }
 
 export default function Home() {
-  useEffect(() => {
-    const script = document.createElement("script")
-    script.defer = true
-    script.async = true
-    script.src = "https://u.egoist.dev/script.js"
-    script.setAttribute("data-website-id", "cb314996-0280-4b3a-ba51-cfb0814eb4d3")
-    document.body.append(script)
-  }, [])
-  
   return (
     <div>
       <Head>
@@ -138,6 +128,8 @@ export default function Home() {
           </span>
         </div>
       </footer>
+
+      <script async defer src="https://u.egoist.dev/script.js" data-website-id="cb314996-0280-4b3a-ba51-cfb0814eb4d3"></script>
     </div>
   )
 }
