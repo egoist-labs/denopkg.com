@@ -1,5 +1,6 @@
 /** @jsx h */
 import { h, FunctionComponent } from "preact"
+import { useEffect } from "preact/hooks"
 import { tw } from "@twind"
 import { Head } from "$fresh/runtime.ts"
 
@@ -22,6 +23,15 @@ const Span: FunctionComponent<{ bg: string; leading?: boolean }> = ({
 }
 
 export default function Home() {
+  useEffect(() => {
+    const script = document.createElement("script")
+    script.defer = true
+    script.async = true
+    script.src = "https://u.egoist.dev/script.js"
+    script.setAttribute("data-website-id", "cb314996-0280-4b3a-ba51-cfb0814eb4d3")
+    document.body.append(script)
+  }, [])
+  
   return (
     <div>
       <Head>
@@ -108,7 +118,7 @@ export default function Home() {
           href="https://chatwise.app?ref=denopkg"
           class={tw`border-2 border-pink-400 text-pink-500 font-bold flex items-center justify-center p-5 rounded-lg text-xl space-x-2 hover:bg-pink-50`}
         >
-          <img src="https://chatwise.app/favicon.png" class={tw`size-10`} />
+          <img src="https://chatwise.app/favicon.png" class={tw`w-8 h-8`} />
           <span>ChatWise: a native chat app for all your favorite language models</span>
         </a>
       </div>
