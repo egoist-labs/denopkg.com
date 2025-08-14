@@ -105,11 +105,11 @@ export default function Home() {
         <a
           target="_blank"
           rel="noopener nofollow"
-          href="https://github.com/sponsors/egoist"
+          href="https://chatwise.app?ref=denopkg"
           class={tw`border-2 border-pink-400 text-pink-500 font-bold flex items-center justify-center p-5 rounded-lg text-xl space-x-2 hover:bg-pink-50`}
         >
-          <img src="/github-sponsors-logo.svg" class={tw`w-1- h-10`} />
-          <span>Sponsor this project on GitHub.</span>
+          <img src="https://chatwise.app/favicon.png" class={tw`size-10`} />
+          <span>ChatWise: a native chat app for all your favorite language models</span>
         </a>
       </div>
       <footer class={tw`border-t border-gray-200 my-10 py-5 text-gray-500`}>
